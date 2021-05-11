@@ -8,17 +8,13 @@ using System.Web.Mvc;
 
 namespace BTLQLBHHQ1.Models
 {
-    [Table("HoaDons")]
-    public class HoaDon
+    [Table("ChatLieus")]
+    public class ChatLieu
     {
         [Key]
-        public string HoaDonID { get; set; }
-        public string NhanVienID { get; set; }
-        public string KhachHangID { get; set; }
-        public string HangHoaID { get; set; }
         public string ChatLieuID { get; set; }
-        public string NgayBan { get; set; }
+        public string TenChatLieu { get; set; }
         [AllowHtml]
-        public string TongTien { get; set; }
+        public string KieuDang { get; set; }
     }
 }

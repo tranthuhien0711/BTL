@@ -6,13 +6,13 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using btlquanli.Models;
+using BTLQLBHHQ1.Models;
 
-namespace btlquanli.Controllers
+namespace BTLQLBHHQ1.Controllers
 {
     public class HoaDonsController : Controller
     {
-        private LTQLDbContext db = new LTQLDbContext();
+        private HQDbContext db = new HQDbContext();
 
         // GET: HoaDons
         public ActionResult Index()
@@ -46,7 +46,7 @@ namespace btlquanli.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "HoaDonID,NgayBan,TongTien")] HoaDon hoaDon)
+        public ActionResult Create([Bind(Include = "HoaDonID,NhanVienID,KhachHangID,HangHoaID,ChatLieuID,NgayBan,TongTien")] HoaDon hoaDon)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace btlquanli.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "HoaDonID,NgayBan,TongTien")] HoaDon hoaDon)
+        public ActionResult Edit([Bind(Include = "HoaDonID,NhanVienID,KhachHangID,HangHoaID,ChatLieuID,NgayBan,TongTien")] HoaDon hoaDon)
         {
             if (ModelState.IsValid)
             {

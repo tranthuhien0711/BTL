@@ -6,13 +6,13 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using btlquanli.Models;
+using BTLQLBHHQ1.Models;
 
-namespace btlquanli.Controllers
+namespace BTLQLBHHQ1.Controllers
 {
     public class KhachHangsController : Controller
     {
-        private LTQLDbContext db = new LTQLDbContext();
+        private HQDbContext db = new HQDbContext();
 
         // GET: KhachHangs
         public ActionResult Index()
@@ -46,7 +46,7 @@ namespace btlquanli.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "KhachHangID,TenKhachHang,SDT")] KhachHang khachHang)
+        public ActionResult Create([Bind(Include = "KhachHangID,KhachHangTen,DiaChi,SDTKH")] KhachHang khachHang)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace btlquanli.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "KhachHangID,TenKhachHang,SDT")] KhachHang khachHang)
+        public ActionResult Edit([Bind(Include = "KhachHangID,KhachHangTen,DiaChi,SDTKH")] KhachHang khachHang)
         {
             if (ModelState.IsValid)
             {

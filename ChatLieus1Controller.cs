@@ -10,107 +10,107 @@ using BTLQLBHHQ1.Models;
 
 namespace BTLQLBHHQ1.Controllers
 {
-    public class HangHoasController : Controller
+    public class ChatLieus1Controller : Controller
     {
         private HQDbContext db = new HQDbContext();
 
-        // GET: HangHoas
+        // GET: ChatLieus1
         public ActionResult Index()
         {
-            return View();
+            return View(db.ChatLieus.ToList());
         }
 
-        // GET: HangHoas/Details/5
+        // GET: ChatLieus1/Details/5
         public ActionResult Details(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            HangHoa hangHoa = db.HangHoas.Find(id);
-            if (hangHoa == null)
+            ChatLieu chatLieu = db.ChatLieus.Find(id);
+            if (chatLieu == null)
             {
                 return HttpNotFound();
             }
-            return View(hangHoa);
+            return View(chatLieu);
         }
 
-        // GET: HangHoas/Create
+        // GET: ChatLieus1/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: HangHoas/Create
+        // POST: ChatLieus1/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "HangHoaID,TenHangHoa,ChatLieuID,SoLuong,DonGiaNhap,DonGiaBan")] HangHoa hangHoa)
+        public ActionResult Create([Bind(Include = "ChatLieuID,TenChatLieu,KieuDang")] ChatLieu chatLieu)
         {
             if (ModelState.IsValid)
             {
-                db.HangHoas.Add(hangHoa);
+                db.ChatLieus.Add(chatLieu);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(hangHoa);
+            return View(chatLieu);
         }
 
-        // GET: HangHoas/Edit/5
+        // GET: ChatLieus1/Edit/5
         public ActionResult Edit(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            HangHoa hangHoa = db.HangHoas.Find(id);
-            if (hangHoa == null)
+            ChatLieu chatLieu = db.ChatLieus.Find(id);
+            if (chatLieu == null)
             {
                 return HttpNotFound();
             }
-            return View(hangHoa);
+            return View(chatLieu);
         }
 
-        // POST: HangHoas/Edit/5
+        // POST: ChatLieus1/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "HangHoaID,TenHangHoa,ChatLieuID,SoLuong,DonGiaNhap,DonGiaBan")] HangHoa hangHoa)
+        public ActionResult Edit([Bind(Include = "ChatLieuID,TenChatLieu,KieuDang")] ChatLieu chatLieu)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(hangHoa).State = EntityState.Modified;
+                db.Entry(chatLieu).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(hangHoa);
+            return View(chatLieu);
         }
 
-        // GET: HangHoas/Delete/5
+        // GET: ChatLieus1/Delete/5
         public ActionResult Delete(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            HangHoa hangHoa = db.HangHoas.Find(id);
-            if (hangHoa == null)
+            ChatLieu chatLieu = db.ChatLieus.Find(id);
+            if (chatLieu == null)
             {
                 return HttpNotFound();
             }
-            return View(hangHoa);
+            return View(chatLieu);
         }
 
-        // POST: HangHoas/Delete/5
+        // POST: ChatLieus1/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
         {
-            HangHoa hangHoa = db.HangHoas.Find(id);
-            db.HangHoas.Remove(hangHoa);
+            ChatLieu chatLieu = db.ChatLieus.Find(id);
+            db.ChatLieus.Remove(chatLieu);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

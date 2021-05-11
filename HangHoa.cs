@@ -6,7 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace btlquanli.Models
+namespace BTLQLBHHQ1.Models
 {
     [Table("HangHoas")]
     public class HangHoa
@@ -14,8 +14,10 @@ namespace btlquanli.Models
         [Key]
         public string HangHoaID { get; set; }
         public string TenHangHoa { get; set; }
+        public string ChatLieuID { get; set; }
         public string SoLuong { get; set; }
+        public string DonGiaNhap { get; set; }
         [AllowHtml]
-        public string DonGia { get; set; }
+        public string DonGiaBan { get; set; }
     }
 }

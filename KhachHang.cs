@@ -6,16 +6,16 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace btlquanli.Models
+namespace BTLQLBHHQ1.Models
 {
     [Table("KhachHangs")]
     public class KhachHang
     {
         [Key]
         public string KhachHangID { get; set; }
-        public string TenKhachHang { get; set; }
-        [MaxLength(50)]
+        public string KhachHangTen { get; set; }
+        public string DiaChi { get; set; }
         [AllowHtml]
-        public string SDT { get; set; }
+        public string SDTKH { get; set; }
     }
 }
